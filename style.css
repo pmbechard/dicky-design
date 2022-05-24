@@ -174,6 +174,12 @@ main {
   opacity: 0.7;
 }
 
+#left-arrow:active,
+#right-arrow:active {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
 #left-arrow {
   left: 10px;
 }
