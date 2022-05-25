@@ -1,3 +1,4 @@
+// TODO: Add little dots to show position in image list
 // TODO: make responsive for mobile devices
 
 // FIXME: bug when moving between expandable menu items very quickly (ie, under 200ms)
@@ -28,6 +29,12 @@ let currentImgNum = 1;
 const currentImg = document.getElementById('displayed-img');
 
 const rightArrow = document.getElementById('right-arrow');
+const leftArrow = document.getElementById('left-arrow');
+
+let scroll = window.setInterval(() => {
+  rightArrow.click();
+}, 5000);
+
 rightArrow.addEventListener('click', () => {
   if (currentImgNum === 4) {
     currentImgNum = 1;
@@ -39,9 +46,12 @@ rightArrow.addEventListener('click', () => {
     currentImg.style.opacity = 1;
     currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
   }, 1000);
+  window.clearInterval(scroll);
+  scroll = window.setInterval(() => {
+    rightArrow.click();
+  }, 5000);
 });
 
-const leftArrow = document.getElementById('left-arrow');
 leftArrow.addEventListener('click', () => {
   if (currentImgNum === 1) {
     currentImgNum = 4;
@@ -53,8 +63,8 @@ leftArrow.addEventListener('click', () => {
     currentImg.style.opacity = 1;
     currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
   }, 1000);
+  window.clearInterval(scroll);
+  scroll = window.setInterval(() => {
+    rightArrow.click();
+  }, 5000);
 });
-
-window.setInterval(() => {
-  rightArrow.click();
-}, 5000);
