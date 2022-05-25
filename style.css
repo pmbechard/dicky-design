@@ -144,9 +144,13 @@ main {
 }
 
 #current-img {
-  outline: 5px solid var(--dark);
+  outline: 5px solid rgba(51, 51, 51, 0.7);
   position: relative;
   height: 350px;
+}
+
+#displayed-img {
+  object-fit: cover;
 }
 
 .img-area {
