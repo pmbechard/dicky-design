@@ -1,4 +1,3 @@
-// TODO: add picture scrolling functionality and auto-scroll
 // TODO: make responsive for mobile devices
 
 // FIXME: bug when moving between expandable menu items very quickly (ie, under 200ms)
@@ -35,7 +34,11 @@ rightArrow.addEventListener('click', () => {
   } else {
     currentImgNum++;
   }
-  currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
+  currentImg.style.opacity = 0;
+  window.setTimeout(() => {
+    currentImg.style.opacity = 1;
+    currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
+  }, 1000);
 });
 
 const leftArrow = document.getElementById('left-arrow');
@@ -45,5 +48,13 @@ leftArrow.addEventListener('click', () => {
   } else {
     currentImgNum--;
   }
-  currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
+  currentImg.style.opacity = 0;
+  window.setTimeout(() => {
+    currentImg.style.opacity = 1;
+    currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
+  }, 1000);
 });
+
+window.setInterval(() => {
+  rightArrow.click();
+}, 5000);
