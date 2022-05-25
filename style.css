@@ -144,8 +144,9 @@ main {
 }
 
 #current-img {
-  border: 5px solid var(--dark);
+  outline: 5px solid var(--dark);
   position: relative;
+  height: 350px;
 }
 
 .img-area {
