@@ -24,9 +24,15 @@ const currentImg = document.getElementById('displayed-img');
 const rightArrow = document.getElementById('right-arrow');
 const leftArrow = document.getElementById('left-arrow');
 
-let scroll = window.setInterval(() => {
-  rightArrow.click();
-}, 5000);
+let scroll;
+resetScroll();
+
+function resetScroll() {
+  window.clearInterval(scroll);
+  scroll = window.setInterval(() => {
+    rightArrow.click();
+  }, 5000);
+}
 
 rightArrow.addEventListener('click', () => {
   if (currentImgNum === 4) {
@@ -39,10 +45,7 @@ rightArrow.addEventListener('click', () => {
     currentImg.style.opacity = 1;
     currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
   }, 1000);
-  window.clearInterval(scroll);
-  scroll = window.setInterval(() => {
-    rightArrow.click();
-  }, 5000);
+  resetScroll();
 });
 
 leftArrow.addEventListener('click', () => {
@@ -56,8 +59,5 @@ leftArrow.addEventListener('click', () => {
     currentImg.style.opacity = 1;
     currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
   }, 1000);
-  window.clearInterval(scroll);
-  scroll = window.setInterval(() => {
-    rightArrow.click();
-  }, 5000);
+  resetScroll();
 });
