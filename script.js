@@ -8,19 +8,12 @@ const expandableMenus = document.querySelectorAll('.expandable');
 expandableMenus.forEach((menu) => {
   menu.style.cursor = 'auto';
   menu.addEventListener('mouseenter', () => {
-    expandableMenus.forEach((item) => {
-      item.firstElementChild.style.display = 'none';
-    });
-    window.setTimeout(
-      () => (menu.firstElementChild.style.display = 'block'),
-      200
-    );
+    window.setTimeout(() => {
+      menu.firstElementChild.classList.toggle('shown');
+    }, 200);
   });
   menu.addEventListener('mouseleave', () => {
-    expandableMenus.forEach((item) => {
-      item.firstElementChild.style.display = 'none';
-    });
-    menu.firstElementChild.style.display = 'none';
+    menu.firstElementChild.classList.toggle('shown');
   });
 });
 

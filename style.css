@@ -95,6 +95,8 @@ header > img {
   background-color: var(--light);
   width: 200px;
   left: 0;
+
+  transition: all 0.2s ease-in-out;
 }
 
 .sub-menu > li {
@@ -113,6 +115,10 @@ header > img {
   transform: scale(1);
   color: var(--dark);
   background-color: var(--mainLight);
+}
+
+.shown {
+  display: block;
 }
 
 /* MAIN CONTENT */
