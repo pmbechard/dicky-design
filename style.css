@@ -232,6 +232,11 @@ main {
   background-color: rgba(51, 51, 51, 0.9);
 }
 
+.selectedDot {
+  transform: scale(1.2);
+  background-color: rgba(51, 51, 51, 1);
+}
+
 .action-area {
   width: 40vw;
   text-align: center;

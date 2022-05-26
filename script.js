@@ -45,6 +45,7 @@ rightArrow.addEventListener('click', () => {
     currentImg.style.opacity = 1;
     currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
   }, 1000);
+  setSelectedDot(currentImgNum);
   resetScroll();
 });
 
@@ -59,6 +60,7 @@ leftArrow.addEventListener('click', () => {
     currentImg.style.opacity = 1;
     currentImg.setAttribute('src', `img/slider/${currentImgNum}.jpg`);
   }, 1000);
+  setSelectedDot(currentImgNum);
   resetScroll();
 });
 
@@ -73,6 +75,20 @@ dots.forEach((dot) => {
         `img/slider/${dot.getAttribute('value')}.jpg`
       );
     }, 1000);
+    setSelectedDot(dot.getAttribute('value'));
+    currentImgNum = Number(dot.getAttribute('value'));
     resetScroll();
   });
 });
+
+function setSelectedDot(num) {
+  let counter = 1;
+  dots.forEach((dot) => {
+    if (counter == num) {
+      dot.classList.add('selectedDot');
+    } else {
+      dot.classList.remove('selectedDot');
+    }
+    counter++;
+  });
+}
