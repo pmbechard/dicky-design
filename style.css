@@ -53,6 +53,10 @@ header > img {
 
 /* NAVBAR */
 
+.mobile-menu {
+  display: none;
+}
+
 .top-level-menu {
   display: flex;
   justify-content: space-around;
@@ -332,6 +336,12 @@ footer > img:hover {
   }
 
   .mobile-menu {
-    display: block;
+    display: flex;
+    align-items: center;
+
+    background-color: var(--mainColor);
+    color: var(--light);
+    opacity: 0.9;
+    padding: 10px;
   }
 }
