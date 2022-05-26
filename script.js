@@ -1,4 +1,3 @@
-// TODO: Add little dots to show position in image list
 // TODO: make responsive for mobile devices
 
 // FIXME: bug when moving between expandable menu items very quickly (ie, under 200ms)
