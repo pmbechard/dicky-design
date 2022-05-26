@@ -61,3 +61,18 @@ leftArrow.addEventListener('click', () => {
   }, 1000);
   resetScroll();
 });
+
+const dots = document.querySelectorAll('.dot');
+dots.forEach((dot) => {
+  dot.addEventListener('click', () => {
+    currentImg.style.opacity = 0;
+    window.setTimeout(() => {
+      currentImg.style.opacity = 1;
+      currentImg.setAttribute(
+        'src',
+        `img/slider/${dot.getAttribute('value')}.jpg`
+      );
+    }, 1000);
+    resetScroll();
+  });
+});
