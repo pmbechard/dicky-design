@@ -16,6 +16,30 @@ expandableMenus.forEach((menu) => {
   });
 });
 
+// MOBILE MENU
+const mobileMenuBtn = document.querySelector('.mobile-menu');
+const topLevelMenu = document.querySelector('.top-level-menu');
+mobileMenuBtn.addEventListener('click', () => {
+  if (topLevelMenu.style.display === 'none') {
+    topLevelMenu.style.display = 'flex';
+    topLevelMenu.style.position = 'absolute';
+    topLevelMenu.style.width = '100vw';
+  } else {
+    topLevelMenu.style.display = 'none';
+  }
+});
+
+let screenWidth = window.matchMedia('(max-width: 800px)');
+function menuDisplay(screenWidth) {
+  if (screenWidth.matches) {
+    topLevelMenu.style.display = 'none';
+  } else {
+    topLevelMenu.style.display = 'flex';
+  }
+}
+menuDisplay(screenWidth);
+screenWidth.addListener(menuDisplay);
+
 // IMAGE SLIDER
 let currentImgNum = 1;
 const currentImg = document.getElementById('displayed-img');
