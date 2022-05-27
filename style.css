@@ -53,6 +53,10 @@ header > img {
 
 /* NAVBAR */
 
+nav {
+  margin-bottom: 20px;
+}
+
 .mobile-menu {
   display: none;
 }
