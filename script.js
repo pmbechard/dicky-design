@@ -1,4 +1,3 @@
-// FIXME: touch up mobile menu design
 // FIXME: stick footer to bottom
 // FIXME: bug when moving between expandable menu items very quickly (ie, under 200ms)
 
@@ -19,13 +18,19 @@ expandableMenus.forEach((menu) => {
 // MOBILE MENU
 const mobileMenuBtn = document.querySelector('.mobile-menu');
 const topLevelMenu = document.querySelector('.top-level-menu');
+const topLevelItem = document.querySelectorAll('.top-level-menu > li');
+const subMenu = document.querySelectorAll('.sub-menu');
 mobileMenuBtn.addEventListener('click', () => {
   if (topLevelMenu.style.display === 'none') {
     topLevelMenu.style.display = 'flex';
     topLevelMenu.style.position = 'absolute';
     topLevelMenu.style.width = '100vw';
+    topLevelItem.forEach((item) => (item.style.width = '100vw'));
+    subMenu.forEach((menu) => (menu.style.width = '100vw'));
   } else {
     topLevelMenu.style.display = 'none';
+    topLevelItem.forEach((item) => (item.style.width = '200px'));
+    subMenu.forEach((menu) => (menu.style.width = '200px'));
   }
 });
 
@@ -33,8 +38,10 @@ let screenWidth = window.matchMedia('(max-width: 800px)');
 function menuDisplay(screenWidth) {
   if (screenWidth.matches) {
     topLevelMenu.style.display = 'none';
+    topLevelMenu.style.opacity = '0.95';
   } else {
     topLevelMenu.style.display = 'flex';
+    topLevelMenu.style.opacity = '0.9';
   }
 }
 menuDisplay(screenWidth);
