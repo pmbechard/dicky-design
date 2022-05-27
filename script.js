@@ -1,4 +1,3 @@
-// FIXME: stick footer to bottom
 // FIXME: bug when moving between expandable menu items very quickly (ie, under 200ms)
 
 // EXPANDABLE MENUS
